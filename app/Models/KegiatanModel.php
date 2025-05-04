@@ -20,4 +20,9 @@ class KegiatanModel extends Model
         'lokasi',
     ];
 
+    public function pendaftarans()
+    {
+        return $this->hasMany(pendaftaranModel::class);
+    }
+
 }

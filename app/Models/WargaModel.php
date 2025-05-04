@@ -26,4 +26,9 @@ class WargaModel extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function pendaftarans()
+    {
+        return $this->hasMany(pendaftaranModel::class);
+    }
 }

@@ -52,6 +52,12 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('pendaftarans', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('warga_id')->constrained('wargas')->onDelete('cascade');
+            $table->foreignId('kegiatan_id')->constrained('kegiatans')->onDelete('cascade');
+            $table->timestamps();
+        });
 
         
         Schema::create('komentars', function (Blueprint $table) {
@@ -63,7 +69,7 @@ return new class extends Migration
         });
     }
 
-    
+
     public function down(): void
     {
         Schema::dropIfExists('pendaftarans');

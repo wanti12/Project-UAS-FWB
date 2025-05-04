@@ -46,7 +46,7 @@ class User extends Authenticatable
         ];
     }
 
-    // Relasi ke role terkait
+   
     public function warga()
     {
         return $this->hasOne(WargaModel::class);
@@ -62,7 +62,7 @@ class User extends Authenticatable
         return $this->hasOne(PenyelenggaraModel::class);
     }
 
-    // Fungsi bantu untuk cek role
+    
     public function isWarga()
     {
         return $this->role === 'warga';

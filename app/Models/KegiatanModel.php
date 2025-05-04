@@ -9,10 +9,10 @@ class KegiatanModel extends Model
 {
     use HasFactory;
 
-    // Nama tabel jika tidak sesuai dengan konvensi Laravel (plural dari model)
+    
     protected $table = 'kegiatans';
 
-    // Kolom-kolom yang boleh diisi (mass assignment)
+    
     protected $fillable = [
         'nama_kegiatan',
         'tanggal',

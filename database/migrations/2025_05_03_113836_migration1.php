@@ -8,12 +8,12 @@ return new class extends Migration
 {
     public function up(): void
     {
-        // Tabel users
+        
         Schema::table('users', function (Blueprint $table) {
             $table->string('role')->default('warga');
         });
 
-        // Tabel wargas
+
         Schema::create('wargas', function (Blueprint $table) {
             $table->id();
             $table->string('nik')->unique();
@@ -24,7 +24,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Tabel pemerintahs
+        
         Schema::create('pemerintahs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
@@ -32,7 +32,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Tabel penyelenggaras
+        
         Schema::create('penyelenggaras', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
@@ -40,7 +40,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        // Tabel kegiatans
+        
         Schema::create('kegiatans', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
@@ -53,7 +53,7 @@ return new class extends Migration
         });
 
 
-        // Tabel komentars
+        
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
             $table->foreignId('warga_id')->constrained('wargas')->onDelete('cascade');
@@ -63,9 +63,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+    
     public function down(): void
     {
         Schema::dropIfExists('pendaftarans');

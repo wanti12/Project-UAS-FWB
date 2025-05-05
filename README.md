@@ -1,62 +1,147 @@
-[laporan](https://github.com/wanti12/Project-UAS-FWB/blob/main/Wanti_D0223026_fwb.md.md.zip)
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">DesaInvolve</h1>
+
+<hr/>
+
+<h3 align="center">sistem informasi kegiatan desa</h3>
+
+---
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <img src="https://github.com/user-attachments/assets/36f5b8ce-b59d-4c5d-892f-31a6f36b31b5" alt="Logo Unsulbar" width="200"/>
 </p>
 
-## About Laravel
+<p align="center">
+  <strong>WANTI</strong><br/><br/>
+  <strong>D0223026</strong><br/><br/>
+  <strong>Framework Web Based</strong><br/><br/>
+  <strong>2025</strong>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 👥 Role dan Fitur-fiturnya
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🏛️ Pemerintah (Admin)
+Role yang mewakili aparatur desa, yang bertanggung jawab memverifikasi dan mengelola kegiatan serta memantau partisipasi warga.
 
-## Learning Laravel
+**Fitur utama:**
+- Melihat daftar kegiatan (pending, approved, rejected)
+- Menyetujui atau menolak kegiatan yang diajukan penyelenggara
+- Melihat laporan pendaftaran warga ke kegiatan
+- Melihat data warga dan penyelenggara
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🧑‍💼 Penyelenggara
+Role organisasi atau kelompok yang bertanggung jawab mengusulkan dan menjalankan kegiatan.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+**Fitur utama:**
+- Mengajukan kegiatan
+- Melihat status kegiatan yang diajukan
+- Melihat daftar warga yang mendaftar ke kegiatan mereka
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 👤 Warga
+Role masyarakat umum yang bisa mendaftar kegiatan desa dan memberikan komentar.
 
-## Laravel Sponsors
+**Fitur utama:**
+- Melihat daftar kegiatan yang tersedia (status approved)
+- Mendaftar kegiatan yang diinginkan
+- Melihat riwayat pendaftaran kegiatan
+- Memberikan komentar terhadap kegiatan
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🗄️ Tabel-Tabel Database
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+### 1. `users`
 
-## Contributing
+| Field              | Tipe Data     | Keterangan                                  |
+|-------------------|---------------|---------------------------------------------|
+| id                | BIGINT        | Primary Key (auto increment)                |
+| name              | String        | Nama pengguna                               |
+| email             | String        | Email unik pengguna                         |
+| email_verified_at | Timestamp     | Tanggal verifikasi email (nullable)         |
+| password          | String        | Password terenkripsi                        |
+| role              | String        | Peran pengguna (warga, pemerintah, penyelenggara) |
+| created_at        | Timestamp     | Tanggal dibuat                              |
+| updated_at        | Timestamp     | Tanggal diperbarui                          |
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. `wargas`
 
-## Code of Conduct
+| Field         | Tipe Data | Keterangan                             |
+|---------------|-----------|----------------------------------------|
+| id            | BIGINT    | Primary key (auto increment)           |
+| nik           | String    | Nomor Induk Kependudukan (unik)        |
+| nama          | String    | Nama lengkap warga                     |
+| tanggal_lahir | Date      | Tanggal lahir warga                    |
+| alamat        | String    | Alamat tempat tinggal                 |
+| user_id       | BIGINT    | Relasi ke tabel `users`               |
+| created_at    | Timestamp | Tanggal dibuat                         |
+| updated_at    | Timestamp | Tanggal diperbarui                     |
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. `pemerintahs`
 
-## Security Vulnerabilities
+| Field     | Tipe Data | Keterangan                            |
+|-----------|-----------|----------------------------------------|
+| id        | BIGINT    | Primary key                           |
+| user_id   | BIGINT    | Foreign key ke `users`                |
+| jabatan   | String    | Nama jabatan pemerintah (nullable)    |
+| created_at| Timestamp | Tanggal dibuat                        |
+| updated_at| Timestamp | Tanggal diperbarui                    |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. `penyelenggaras`
 
-## License
+| Field            | Tipe Data | Keterangan                               |
+|------------------|-----------|------------------------------------------|
+| id               | BIGINT    | Primary key (auto increment)             |
+| user_id          | BIGINT    | Foreign key ke `users`                   |
+| nama_organisasi  | String    | Nama organisasi/instansi penyelenggara   |
+| created_at       | Timestamp | Tanggal dibuat                           |
+| updated_at       | Timestamp | Tanggal diperbarui                       |
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. `kegiatans`
+
+| Field             | Tipe Data | Keterangan                                         |
+|-------------------|-----------|----------------------------------------------------|
+| id                | BIGINT    | Primary key (auto increment)                      |
+| judul             | String    | Judul kegiatan                                     |
+| deskripsi         | Text      | Deskripsi kegiatan                                 |
+| tanggal           | Date      | Tanggal pelaksanaan kegiatan                       |
+| lokasi            | String    | Lokasi kegiatan                                    |
+| status            | ENUM      | Status kegiatan (pending, approved, rejected)      |
+| penyelenggara_id  | BIGINT    | Foreign key ke `users` (penyelenggara)             |
+| created_at        | Timestamp | Tanggal dibuat                                     |
+| updated_at        | Timestamp | Tanggal diperbarui                                 |
+
+### 6. `pendaftarans`
+
+| Field        | Tipe Data | Keterangan                       |
+|--------------|-----------|----------------------------------|
+| id           | BIGINT    | Primary key (auto increment)     |
+| warga_id     | BIGINT    | Foreign key ke `wargas`         |
+| kegiatan_id  | BIGINT    | Foreign key ke `kegiatans`      |
+| created_at   | Timestamp | Tanggal dibuat                   |
+| updated_at   | Timestamp | Tanggal diperbarui               |
+
+### 7. `komentars`
+
+| Field        | Tipe Data | Keterangan                               |
+|--------------|-----------|------------------------------------------|
+| id           | BIGINT    | Primary key (auto increment)             |
+| warga_id     | BIGINT    | Foreign key ke `wargas`                 |
+| kegiatan_id  | BIGINT    | Foreign key ke `kegiatans`              |
+| isi_komentar | Text      | Isi komentar warga terhadap kegiatan     |
+| created_at   | Timestamp | Tanggal komentar dibuat                  |
+| updated_at   | Timestamp | Tanggal komentar diperbarui              |
+
+---
+
+## 🔗 Relasi Antar Tabel
+
+| Tabel 1        | Relasi | Tabel 2         | Jenis Relasi   | Keterangan                                              |
+|----------------|--------|------------------|----------------|----------------------------------------------------------|
+| `users`        | 1 : 1  | `wargas`         | One to One     | Satu user bisa menjadi warga (nullable)                  |
+| `users`        | 1 : 1  | `pemerintahs`    | One to One     | Satu user adalah satu akun pemerintah                    |
+| `users`        | 1 : 1  | `penyelenggaras` | One to One     | Satu user adalah satu akun penyelenggara                |
+| `penyelenggaras` | 1 : N | `kegiatans`      | One to Many    | Satu penyelenggara bisa membuat banyak kegiatan         |
+| `wargas`       | N : N  | `kegiatans`      | Many to Many   | Lewat tabel `pendaftarans`                              |
+| `wargas`       | 1 : N  | `komentars`      | One to Many    | Warga bisa membuat banyak komentar                      |
+| `kegiatans`    | 1 : N  | `komentars`      | One to Many    | Satu kegiatan bisa memiliki banyak komentar              |

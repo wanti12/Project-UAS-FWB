@@ -7,26 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class pendaftaranModel extends Model
 {
-    use HasFactory;
+   use HasFactory;
 
-    protected $table = 'pendaftarans';
+    protected $table = 'pendaftaran_kegiatans';
 
-   
     protected $fillable = [
-        'warga_id',
-        'kegiatan_id',
-        'status',  
+        'kegiatan_id', 'warga_id', 'status_pendaftaran'
     ];
 
-  
-    public function warga()
-    {
-        return $this->belongsTo(WargaModel::class);
-    }
-
-   
     public function kegiatan()
     {
-        return $this->belongsTo(KegiatanModel::class);
+        return $this->belongsTo(kegiatanModel::class);
+    }
+
+    public function warga()
+    {
+        return $this->belongsTo(userModel::class, 'warga_id');
     }
 }

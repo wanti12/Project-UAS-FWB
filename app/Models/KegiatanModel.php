@@ -5,24 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KegiatanModel extends Model
+class kegiatanModel extends Model
 {
-    use HasFactory;
+   use HasFactory;
 
-    
-    protected $table = 'kegiatans';
-
-    
     protected $fillable = [
-        'nama_kegiatan',
-        'tanggal',
-        'deskripsi',
-        'lokasi',
+        'judul', 'deskripsi', 'tanggal_mulai', 'tanggal_selesai', 'lokasi', 'dibuat_oleh', 'status'
     ];
+
+    public function pembuat()
+    {
+        return $this->belongsTo(userModel::class, 'dibuat_oleh');
+    }
+
+    public function komentars()
+    {
+        return $this->hasMany(komentarModel::class);
+    }
 
     public function pendaftarans()
     {
         return $this->hasMany(pendaftaranModel::class);
     }
 
+    public function pengajuanPenyelenggaras()
+    {
+        return $this->hasMany(pengajuanModel::class);
+    }
 }

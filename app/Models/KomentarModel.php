@@ -5,29 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class KomentarModel extends Model
+class komentarModel extends Model
 {
     use HasFactory;
 
-    
-    protected $table = 'komentars';
-
-    
     protected $fillable = [
-        'warga_id',
-        'kegiatan_id',
-        'komentar',
+        'kegiatan_id', 'user_id', 'komentar'
     ];
 
-   
-    public function warga()
-    {
-        return $this->belongsTo(WargaModel::class);
-    }
-
-    
     public function kegiatan()
     {
-        return $this->belongsTo(KegiatanModel::class);
+        return $this->belongsTo(kegiatanModel::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(userModel::class);
     }
 }

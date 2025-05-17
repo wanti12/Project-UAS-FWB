@@ -1,42 +1,31 @@
-<!doctype html>
+<!-- master.blade.php -->
+<!DOCTYPE html>
 <html lang="en">
-<!--begin::Head-->
 
-@include('layout.head')
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Application</title>
+  <!-- Link ke CSS dan asset lainnya -->
+  @include('layout.css') <!-- Ini adalah bagian untuk link ke file CSS (Bootstrap, dll) -->
+</head>
 
-<!--end::Head-->
-<!--begin::Body-->
+<body class="hold-transition sidebar-mini layout-fixed">
+  <div class="wrapper">
 
-<body class="layout-fixed sidebar-expand-lg bg-body-tertiary">
-    <!--begin::App Wrapper-->
-    <div class="app-wrapper">
-        <!--begin::Header-->
+    @include('layout.header') <!-- Bagian header -->
+    @include('layout.sidebar') <!-- Bagian sidebar -->
 
-        @include('layout.nav')
-
-        <!--end::Header-->
-        <!--begin::Sidebar-->
-        
-        @include('layout.aside')
-
-        <!--end::Sidebar-->
-        <!--begin::App Main-->
-        @yield('content')
-        <!--end::App Main-->
-        <!--begin::Footer-->
-        
-        @include('layout.footer')
-
-        <!--end::Footer-->
+    <div class="content-wrapper">
+      @yield('content') <!-- Konten dinamis halaman yang akan diisi pada halaman spesifik -->
     </div>
-    <!--end::App Wrapper-->
-    <!--begin::Script-->
-    <!--begin::Third Party Plugin(OverlayScrollbars)-->
-    
-    @include('layout.script')
 
-    <!--end::Script-->
+    @include('layout.footer') <!-- Bagian footer -->
+
+  </div>
+  <!-- ./wrapper -->
+
+  @include('layout.script') <!-- Script JS yang digunakan pada seluruh aplikasi -->
 </body>
-<!--end::Body-->
 
 </html>

@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\userModel;
 use Illuminate\Database\Seeder;
 
 class userSeeder extends Seeder
@@ -13,10 +12,10 @@ class userSeeder extends Seeder
      */
     public function run(): void
     {
-        user::insert([
+        userModel::insert([
             [
                 'email' => 'satu@gmail.com',
-                'password' => bcrypt('111'),
+                'password' => bcrypt('123'),
                 'role' => 'pemerintah'
             ],
             [

@@ -1,31 +1,35 @@
-<!-- master.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Application</title>
-  <!-- Link ke CSS dan asset lainnya -->
-  @include('layout.css') <!-- Ini adalah bagian untuk link ke file CSS (Bootstrap, dll) -->
-</head>
+@include('layout.head')
 
 <body class="hold-transition sidebar-mini layout-fixed">
-  <div class="wrapper">
+<div class="wrapper">
 
-    @include('layout.header') <!-- Bagian header -->
-    @include('layout.sidebar') <!-- Bagian sidebar -->
-
-    <div class="content-wrapper">
-      @yield('content') <!-- Konten dinamis halaman yang akan diisi pada halaman spesifik -->
-    </div>
-
-    @include('layout.footer') <!-- Bagian footer -->
-
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="{{asset('Admin')}}/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
   </div>
-  <!-- ./wrapper -->
 
-  @include('layout.script') <!-- Script JS yang digunakan pada seluruh aplikasi -->
+  <!-- Navbar -->
+  @include('layout.nav')
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+ @include('layout.aside')
+
+  <!-- Content Wrapper. Contains page content -->
+ 
+  <!-- /.content-wrapper -->
+  @yield('content')
+  <!-- Control Sidebar -->
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+@include('layout.footer')
+
+<!-- jQuery -->
+@include('layout.script')
 </body>
-
 </html>

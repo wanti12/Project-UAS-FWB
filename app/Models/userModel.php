@@ -47,8 +47,5 @@ protected $table = 'users';
         return $this->hasMany(pendaftaranModel::class, 'warga_id');
     }
 
-    public function pengajuanPenyelenggara()
-    {
-        return $this->hasMany(pengajuanModel::class, 'penyelenggara_id');
-    }
+    
 }

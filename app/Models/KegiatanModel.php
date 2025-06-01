@@ -28,8 +28,5 @@ class kegiatanModel extends Model
         return $this->hasMany(pendaftaranModel::class);
     }
 
-    public function pengajuanPenyelenggaras()
-    {
-        return $this->hasMany(pengajuanModel::class);
-    }
+    
 }

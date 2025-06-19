@@ -27,7 +27,6 @@ Role yang mewakili aparatur desa, bertanggung jawab memverifikasi dan mengelola 
 **Fitur utama:**
 - Melihat dan mengelola seluruh kegiatan yang diajukan.
 - Menyetujui atau menolak pengajuan kegiatan.
-- Melihat daftar warga yang mendaftar kegiatan.
 - Melihat jumlah warga dan penyelenggara.
 
 ### 🧑‍💼 Penyelenggara
@@ -44,7 +43,6 @@ Role masyarakat umum yang bisa mendaftar kegiatan desa dan memberikan komentar.
 **Fitur utama:**
 - Melihat daftar kegiatan yang tersedia (status: approved).
 - Mendaftar kegiatan yang diinginkan.
-- Memberikan komentar terhadap kegiatan.
 
 ---
 

@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('pendaftaran_kegiatans', function (Blueprint $table) {
+        Schema::create('pendaftaran_kegiatans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('kegiatan_id')->constrained('kegiatans')->onDelete('cascade');
             $table->foreignId('warga_id')->constrained('users')->onDelete('cascade');
-            $table->enum('status_pendaftaran', ['menunggu', 'diterima', 'ditolak'])->default('menunggu');
             $table->timestamps();
+            $table->unique(['kegiatan_id', 'warga_id']);
         });
     }
 

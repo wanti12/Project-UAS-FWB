@@ -14,18 +14,23 @@ class userSeeder extends Seeder
     {
         userModel::insert([
             [
-                'email' => 'satu@gmail.com',
+                'email' => 'admin1@gmail.com',
                 'password' => bcrypt('123'),
                 'role' => 'pemerintah'
             ],
             [
-                'email' => 'dani@gmail.com',
-                'password' => bcrypt('222'),
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('234'),
                 'role' => 'pemerintah'
             ],
             [
-                'email' => 'pia@gmail.com',
-                'password' => bcrypt('333'),
+                'email' => 'admin3@gmail.com',
+                'password' => bcrypt('345'),
+                'role' => 'pemerintah'
+            ],
+            [
+                'email' => 'pemerintah1@gmail.com',
+                'password' => bcrypt('pemerintah1'),
                 'role' => 'pemerintah'
             ],
         ]);

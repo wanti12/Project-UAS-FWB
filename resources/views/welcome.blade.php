@@ -1,362 +1,65 @@
-<!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <title>Romyk</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link rel="stylesheet" type="text/css" href="{{asset('warga')}}/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="{{asset('warga')}}/css/style.css">
-      <link rel="stylesheet" href="{{asset('warga')}}/css/responsive.css">
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="{{asset('warga')}}/css/jquery.mCustomScrollbar.min.css">
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      </head>
-   <body>
-      <div class="header_section">
-         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="index.html"><img src="{{asset('warga')}}/images/logo.png"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="icecream.html">Icecream</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="services.html">Services</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                     </li>
-                     {{-- START MODIFIKASI: Hanya tampilkan Login dan Register --}}
-                     @if (Route::has('login'))
-                         <li class="nav-item ml-lg-3">
-                             <a href="{{ route('login') }}" class="btn btn-outline-primary my-2 my-sm-0">Log in</a>
-                         </li>
-                         @if (Route::has('register'))
-                             <li class="nav-item ml-lg-2">
-                                 <a href="{{ route('register') }}" class="btn btn-secondary my-2 my-sm-0">Register</a>
-                             </li>
-                         @endif
-                     @endif
-                     {{-- END MODIFIKASI --}}
-                  </ul>
-                  {{-- Search icon yang mungkin ingin Anda pertahankan atau pindahkan --}}
-                  {{-- <form class="form-inline my-2 my-lg-0">
-                     <div class="fa fa-search form-control-feedback"></div>
-                  </form> --}}
-               </div>
-            </nav>
-         </div>
-         <div class="banner_section layout_padding">
-            <div class="container">
-               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators">
-                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">01</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="1">02</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="2">03</li>
-                     <li data-target="#carouselExampleIndicators" data-slide-to="3">04</li>
-                  </ol>
-                  <div class="carousel-inner">
-                     <div class="carousel-item active">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Ice Cream</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="{{asset('warga')}}/images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Ice Cream</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="{{asset('warga')}}/images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Ice Cream</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="{{asset('warga')}}/images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="row">
-                           <div class="col-sm-6">
-                              <h1 class="banner_taital">Ice Cream</h1>
-                              <p class="banner_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem</p>
-                              <div class="started_text"><a href="#">Order Now</a></div>
-                           </div>
-                           <div class="col-sm-6">
-                              <div class="banner_img"><img src="{{asset('warga')}}/images/banner-img.png"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+@extends('warga.master')
+@section('content')
+    <style>
+        .fade-section {
+            position: relative;
+            min-height: 100vh;
+            background-image: url('{{ asset('warga/images/bg-kegiatan.jpg') }}');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .welcome-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 0 15px;
+        }
+
+        .welcome-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 15px;
+            padding: 40px 30px;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .welcome-card h1 {
+            font-size: 36px;
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .welcome-card p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .btn-welcome {
+            background-color: #ff69b4;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .btn-welcome:hover {
+            background-color: #ff4fa2;
+        }
+    </style>
+
+    <div class="fade-section">
+        <div class="welcome-container">
+            <div class="welcome-card">
+                <h1>Selamat Datang di Desa Volve</h1>
+                <p>Temukan informasi lengkap tentang kegiatan Desa. Warga dapat memantau agenda kegiatan yang akan datang dan mendaftar untuk ikut berpartisipasi.</p>
+                <a href="{{ route('login') }}" class="btn-welcome">Lihat Selengkapnya</a>
             </div>
-         </div>
-         </div>
-      <div class="about_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="about_img"><img src="{{asset('warga')}}/images/about-img.png"></div>
-               </div>
-               <div class="col-md-6">
-                  <h1 class="about_taital">About Icecream</h1>
-                  <p class="about_text">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore euconsectetur adipiscing esequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
-                  <div class="read_bt_1"><a href="#">Read More</a></div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="cream_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="cream_taital">Our Featured Ice Cream</h1>
-                  <p class="cream_text">tempor incididunt ut labore et dolore magna aliqua</p>
-               </div>
-            </div>
-            <div class="cream_section_2">
-               <div class="row">
-                  <div class="col-md-4">
-                     <div class="cream_box">
-                        <div class="cream_img"><img src="{{asset('warga')}}/images/img-1.png"></div>
-                        <div class="price_text">$10</div>
-                        <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="cream_box">
-                        <div class="cream_img"><img src="{{asset('warga')}}/images/img-2.png"></div>
-                        <div class="price_text">$10</div>
-                        <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="cream_box">
-                        <div class="cream_img"><img src="{{asset('warga')}}/images/img-1.png"></div>
-                        <div class="price_text">$10</div>
-                        <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="cream_section_2">
-               <div class="row">
-                  <div class="col-md-4">
-                     <div class="cream_box">
-                        <div class="cream_img"><img src="{{asset('warga')}}/images/img-3.png"></div>
-                        <div class="price_text">$10</div>
-                        <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="cream_box">
-                        <div class="cream_img"><img src="{{asset('warga')}}/images/img-4.png"></div>
-                        <div class="price_text">$10</div>
-                        <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="cream_box">
-                        <div class="cream_img"><img src="{{asset('warga')}}/images/img-5.png"></div>
-                        <div class="price_text">$10</div>
-                        <h6 class="strawberry_text">Strawberry Ice Cream</h6>
-                        <div class="cart_bt"><a href="#">Add To Cart</a></div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="seemore_bt"><a href="#">See More</a></div>
-         </div>
-      </div>
-      <div class="services_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="services_taital">Our Ice Cream Services</h1>
-                  <p class="services_text">tempor incididunt ut labore et dolore magna aliqua</p>
-               </div>
-            </div>
-            <div class="services_section_2">
-               <div class="row">
-                  <div class="col-md-4">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="{{asset('warga')}}/images/icon-1.png"></span>Cookies Ice Cream</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="{{asset('warga')}}/images/icon-2.png"></span>Cookies Ice Cream</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-                  <div class="col-md-4">
-                     <div class="services_box">
-                        <h5 class="tasty_text"><span class="icon_img"><img src="{{asset('warga')}}/images/icon-1.png"></span>Cookies Ice Cream</h5>
-                        <p class="lorem_text">commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fat </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="seemore_bt"><a href="#">Read More</a></div>
-         </div>
-      </div>
-      <div class="testimonial_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="testimonial_taital">Testimonial</h1>
-               </div>
-            </div>
-            <div class="testimonial_section_2">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="testimonial_box">
-                        <div id="main_slider" class="carousel slide" data-ride="carousel">
-                           <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                 <p class="testimonial_text">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
-                                 <h4 class="client_name">Marri Fen</h4>
-                                 <div class="client_img"><img src="{{asset('warga')}}/images/client-img.png"></div>
-                              </div>
-                              <div class="carousel-item">
-                                 <p class="testimonial_text">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
-                                 <h4 class="client_name">Marri Fen</h4>
-                                 <div class="client_img"><img src="{{asset('warga')}}/images/client-img.png"></div>
-                              </div>
-                              <div class="carousel-item">
-                                 <p class="testimonial_text">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint</p>
-                                 <h4 class="client_name">Marri Fen</h4>
-                                 <div class="client_img"><img src="{{asset('warga')}}/images/client-img.png"></div>
-                              </div>
-                           </div>
-                           <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                           <i class="fa fa-angle-left"></i>
-                           </a>
-                           <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                           <i class="fa fa-angle-right"></i>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="contact_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-4">
-                  <div class="contact_main">
-                     <h1 class="contact_taital">Contact Us</h1>
-                     <form action="/action_page.php">
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Name" name="Name">
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Email" name="Name">
-                        </div>
-                        <div class="form-group">
-                           <input type="text" class="email-bt" placeholder="Phone Numbar" name="Email">
-                        </div>
-                        <div class="form-group">
-                           <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                        </div>
-                     </form>
-                     <div class="main_bt"><a href="#">SEND</a></div>
-                  </div>
-               </div>
-               <div class="col-md-8">
-                  <div class="location_text">
-                     <ul>
-                        <li>
-                           <a href="#">
-                           <span class="padding_left_10 active"><i class="fa fa-map-marker" aria-hidden="true"></i></span>Making this the first true</a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-phone" aria-hidden="true"></i></span>Call : +01 1234567890
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <span class="padding_left_10"><i class="fa fa-envelope" aria-hidden="true"></i></span>Email : demo@gmail.com
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="mail_main">
-                     <h3 class="newsletter_text">Newsletter</h3>
-                     <div class="form-group">
-                        <textarea class="update_mail" placeholder="Enter Your Email" rows="5" id="comment" name="Enter Your Email"></textarea>
-                        <div class="subscribe_bt"><a href="#">Subscribe</a></div>
-                     </div>
-                  </div>
-                  <div class="footer_social_icon">
-                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="copyright_section">
-         <div class="container">
-            <p class="copyright_text">2020 All Rights Reserved. Design by <a href="https://html.design">Free Html Templates</a> Distribution by <a href="https://themewagon.com">ThemeWagon</a></p>
-         </div>
-      </div>
-      <script src="{{asset('warga')}}/js/jquery.min.js"></script>
-      <script src="{{asset('warga')}}/js/popper.min.js"></script>
-      <script src="{{asset('warga')}}/js/bootstrap.bundle.min.js"></script>
-      <script src="{{asset('warga')}}/js/jquery-3.0.0.min.js"></script>
-      <script src="{{asset('warga')}}/js/plugin.js"></script>
-      <script src="{{asset('warga')}}/js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="j{{asset('warga')}}/s/custom.js"></script>
-      </body>
-</html>
+        </div>
+    </div>
+@endsection

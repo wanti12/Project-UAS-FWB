@@ -29,7 +29,7 @@ protected $table = 'users';
 
     public function profile()
     {
-        return $this->hasOne(UserProfileModel::class);
+        return $this->hasOne(UserProfileModel::class, 'user_id');
     }
 
     public function kegiatanDibuat()
@@ -37,10 +37,6 @@ protected $table = 'users';
         return $this->hasMany(kegiatanModel::class, 'dibuat_oleh');
     }
 
-    public function komentars()
-    {
-        return $this->hasMany(komentarModel::class);
-    }
 
     public function pendaftarans()
     {

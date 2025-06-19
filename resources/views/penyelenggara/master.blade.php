@@ -12,14 +12,22 @@
   </div>
 
   <!-- Navbar -->
-  @include('layout.nav')
+  @include('penyelenggara.nav')
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
- @include('layout.aside')
+ @include('penyelenggara.aside')
 
+  <!-- Content Wrapper. Contains page content -->
  
- @yield('content')
+  <!-- /.content-wrapper -->
+ <div class="main-content">
+        @yield('content') <!-- PENTING -->
+    </div>
+  <!-- Control Sidebar -->
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
 
 @include('layout.footer')
 

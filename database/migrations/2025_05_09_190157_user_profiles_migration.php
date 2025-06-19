@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat')->nullable();
             $table->string('no_hp')->nullable();
-            $table->string('foto')->nullable(); // path ke file gambar
+            $table->text('bio')->nullable();
             $table->timestamps();
         });
     }

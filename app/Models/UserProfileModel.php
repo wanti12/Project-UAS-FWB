@@ -7,14 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserProfileModel extends Model
 {
-   use HasFactory;
 
+    use HasFactory;
+    protected $table = 'user_profiles';
     protected $fillable = [
-        'user_id', 'nama', 'alamat', 'no_hp', 'foto', 'bio'
+        'user_id',
+        'nama',
+        'alamat',
+        'no_hp',
+        'bio'
     ];
 
     public function user()
     {
-        return $this->belongsTo(userModel::class);
+        return $this->belongsTo(UserModel::class, 'user_id');
     }
 }
+
+

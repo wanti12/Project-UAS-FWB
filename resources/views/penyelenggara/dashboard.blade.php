@@ -1,4 +1,4 @@
-@extends('layout.master')
+@extends('penyelenggara.master')
 @section('content')
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
@@ -30,52 +30,52 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3>Pengajuan</h3>
+                                <h3>Ajukan Kegiatan</h3>
 
-                                <p>lihat daftar pemngajuan kegiatan</p>
+                                <p>Buat Kegiatan mu</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="{{ route('admin.pengajuan') }}" class="small-box-footer">
+                            <a href="{{ route('kegiatan.create') }}" class="small-box-footer">
                                 lihat selengkapnya <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </div>
                     </div>
-
-                    <div class="col-lg-6 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-secondary">
-                            <div class="inner">
-                                <h3>Daftar Kegiatan</h3>
-
-                                <p>Lihat Daftar Kegiatan Berlangsung</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-person-add"></i>
-                            </div>
-                            <a href="{{ route('admin.kegiatan') }}" class="small-box-footer">lihat selengkapnya <i
-                                    class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-
                     <!-- ./col -->
                     <div class="col-lg-6 col-6">
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
-                                <h3>Warga<sup style="font-size: 20px"></sup></h3>
-                                <p>Lihat Daftar Warga</p>
+                                <h3>Status Kegiatan<sup style="font-size: 20px"></sup></h3>
+
+                                <p>Cek Status Kegiatanmu</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="{{ route('admin.user') }}" class="small-box-footer">
+                            <a href="{{ route('kegiatan.status') }}" class="small-box-footer">
                                 lihat selengkapnya <i class="fas fa-arrow-circle-right"></i>
                             </a>
 
                         </div>
-                    </div>                    
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-6 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3>Daftar Warga</h3>
+
+                                <p>Lihat Daftar Warga Yang Ikut Kegiatan mu</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">lihat selengkapnya <i
+                                    class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                 </div>
